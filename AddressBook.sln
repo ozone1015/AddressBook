@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBook", "AddressBook\AddressBook.csproj", "{BAEFB0DC-3C6F-426C-A93D-95A41A758E2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAEFB0DC-3C6F-426C-A93D-95A41A758E2A}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{BAEFB0DC-3C6F-426C-A93D-95A41A758E2A}.Debug|iPhone.Build.0 = Debug|iPhone
+		{BAEFB0DC-3C6F-426C-A93D-95A41A758E2A}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{BAEFB0DC-3C6F-426C-A93D-95A41A758E2A}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{BAEFB0DC-3C6F-426C-A93D-95A41A758E2A}.Release|iPhone.ActiveCfg = Release|iPhone
+		{BAEFB0DC-3C6F-426C-A93D-95A41A758E2A}.Release|iPhone.Build.0 = Release|iPhone
+		{BAEFB0DC-3C6F-426C-A93D-95A41A758E2A}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{BAEFB0DC-3C6F-426C-A93D-95A41A758E2A}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = AddressBook\AddressBook.csproj
+	EndGlobalSection
+EndGlobal
