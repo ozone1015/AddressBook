@@ -26,21 +26,16 @@ namespace AddressBook
 		{
 			// If you have defined a view, add it here:
 		    window.AddSubview (this.navController.View);
-			
-			
 			window.MakeKeyAndVisible ();
 			
-			
-			//---- create our list of items in the nav 
-
-			Contact contact1 = new Contact("Chase McCarthy", "843 Main St.", "(318)748-7832", "chase@chase.com");
-			Contact contact2 = new Contact("Micah Woods", "843 Main St.", "(318)748-7832", "chase@chase.com");                               
-			
-			this._navItems.Add (new NavItem (contact1, typeof(ContactView))); 
-			this._navItems.Add (new NavItem (contact2, typeof(ContactView))); 
+			//---- create our list of items in the nav
+			List<Person> persons = PersonRepository.Instance.LoadPersonList();
+			for(int i = 0; i < persons.Count; i++)
+			{
+				this._navItems.Add (new NavItem (persons[i], typeof(ContactView))); 
+			}
 			
 			//---- configure our datasource 
-			
 			this.tableView.TableView.DataSource = new TableViewDataSource (this._navItems); 
 			this.tableView.TableView.Delegate = new NavTableDelegate (this.navController, this._navItems); 
 

@@ -1,8 +1,12 @@
 using System;
+using System.Runtime.Serialization;
 namespace AddressBook
 {
-	public class Contact
+	[Serializable]
+	[DataContract (Name="person")]
+	public class Person
 	{
+		[DataMember (Name="name", Order=1)]
 		public string Name
 		{
 			get { return this._name; }
@@ -10,6 +14,7 @@ namespace AddressBook
 		}
 		protected string _name;
 		
+		[DataMember (Name="address", Order=2)]
 		public string Address
 		{
 			get { return this._address; }
@@ -17,6 +22,7 @@ namespace AddressBook
 		}
 		protected string _address;
 		
+		[DataMember (Name="phone", Order=3)]
 		public string Phone
 		{
 			get { return this._phone; }
@@ -24,6 +30,7 @@ namespace AddressBook
 		}
 		protected string _phone;
 		
+		[DataMember (Name="email", Order=4)]
 		public string Email
 		{
 			get { return this._email; }
@@ -31,7 +38,7 @@ namespace AddressBook
 		}
 		protected string _email;
 		
-		public Contact ()
+		public Person ()
 		{
 			_name = "None";
 			_address = "None";
@@ -39,7 +46,7 @@ namespace AddressBook
 			_email = "None";
 		}
 		
-		public Contact (string name, string address, string phone, string email)
+		public Person (string name, string address, string phone, string email)
 		{
 			_name = name;
 			_address = address;

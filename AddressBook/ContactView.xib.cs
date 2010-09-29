@@ -1,9 +1,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Json;
 using System.Linq;
+using System.Runtime.Serialization.Json;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System.Text;
 
 namespace AddressBook
 {
@@ -31,7 +35,7 @@ namespace AddressBook
 			
 		}
 		
-		public Contact Person
+		public Person Contact
 		{
 			get { return this._person; }
 			set 
@@ -43,7 +47,7 @@ namespace AddressBook
 				email.Text = _person.Email;
 			}
 		}
-		protected Contact _person;
+		protected Person _person;
 
 		void Initialize ()
 		{

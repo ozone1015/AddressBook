@@ -89,7 +89,7 @@ namespace AddressBook
 				}
 			}
 			
-			navItem.ViewController.Person = navItem.Person;
+			navItem.ViewController.Contact = navItem.Person;
 		}
 	}
 }

@@ -56,34 +56,34 @@ namespace AddressBook
 		}
 		protected Type[] _controllerConstructorTypes = Type.EmptyTypes;
 	
-		public Contact Person
+		public Person Person
 		{
 			get { return this._person; }
 			set { this._person = value; }
 		}
-		protected Contact _person;
+		protected Person _person;
 
 		public NavItem ()
 		{
 		}
 
-		public NavItem (Contact person) : this()
+		public NavItem (Person person) : this()
 		{
 			_person= person;
 		}
 
-		public NavItem (Contact person, ContactView viewController) : this(person)		
+		public NavItem (Person person, ContactView viewController) : this(person)		
 		{
 			_person = person;	
 			_viewController = viewController;
 		}		
 
-		public NavItem (Contact person, Type controllerType) : this(person)
+		public NavItem (Person person, Type controllerType) : this(person)
 		{
 			this._controllerType = controllerType;
 		}
 
-		public NavItem (Contact person, Type controllerType, object[] controllerConstructorArgs) : this(person, controllerType)
+		public NavItem (Person person, Type controllerType, object[] controllerConstructorArgs) : this(person, controllerType)
 		{
 			this.ControllerConstructorArgs = controllerConstructorArgs;
 		}
