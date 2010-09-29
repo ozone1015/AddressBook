@@ -28,7 +28,22 @@ namespace AddressBook
 		public ContactView () : base("ContactView", null)
 		{
 			Initialize ();
+			
 		}
+		
+		public Contact Person
+		{
+			get { return this._person; }
+			set 
+			{ 
+				this._person = value; 
+				name.Text = _person.Name;
+				address.Text = _person.Address;
+				phone.Text = _person.Phone;
+				email.Text = _person.Email;
+			}
+		}
+		protected Contact _person;
 
 		void Initialize ()
 		{

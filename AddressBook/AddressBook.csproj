@@ -82,6 +82,7 @@
       <DependentUpon>ContactView.xib</DependentUpon>
     </Compile>
     <Compile Include="NavTableDelegate.cs" />
+    <Compile Include="Contact.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />

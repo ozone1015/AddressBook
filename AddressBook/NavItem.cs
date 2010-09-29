@@ -4,241 +4,88 @@ using MonoTouch.UIKit;
 
 namespace AddressBook
 {
-
-	//========================================================================
-
-	/// <summary>
-
-	/// 
-
-	/// </summary>
-
 	public class NavItem
-
 	{
-
-		//=============================================================
-
-		#region -= declarations =-
-
-
-
-		/// <summary>
-
-		/// The name of the nav item, shows up as the label
-
-		/// </summary>
-
-		public string Name
-
+		public ContactView ViewController
 		{
-
-			get { return this._name; }
-
-			set { this._name = value; }
-
+			get { return this._viewController; }
+			set { this._viewController = value; }
 		}
-
-		protected string _name;
-
-
-		/// <summary>
-
-		/// The UIViewController that the nav item opens. Use this property if you 
-
-		/// wanted to early instantiate the controller when the nav table is built out,
-
-		/// otherwise just set the Type property and it will lazy-instantiate when the 
-
-		/// nav item is clicked on.
-
-		/// </summary>
-
-		public UIViewController Controller
-
-		{
-
-			get { return this._controller; }
-
-			set { this._controller = value; }
-
-		}
+		protected ContactView _viewController;
 		
-		public ContactView Contact
-
-		{
-
-			get { return this._contact; }
-
-			set { this._contact = value; }
-
-		}
-
-		protected UIViewController _controller;
-		protected ContactView _contact;
-
-
 		/// <summary>
-
 		/// The Type of the UIViewController. Set this to the type and leave the Controller
- 
 		/// property empty to lazy-instantiate the ViewController when the nav item is 
-
 		/// clicked.
-
 		/// </summary>
-
 		public Type ControllerType
-
 		{
-
 			get { return this._controllerType; }
-
 			set { this._controllerType = value; }
-
 		}
-
 		protected Type _controllerType;
 
-
-
 		/// <summary>
-
 		/// a list of the constructor args (if neccesary) for the controller. use this in
-
 		/// conjunction with ControllerType if lazy-creating controllers.
-
 		/// </summary>
-
 		public object[] ControllerConstructorArgs
-
 		{
-
 			get { return this._controllerConstructorArgs; }
-
 			set
-
 			{
-
 				this._controllerConstructorArgs = value;
-
-
-				
 				this._controllerConstructorTypes = new Type[this._controllerConstructorArgs.Length];
 
 				for (int i = 0; i < this._controllerConstructorArgs.Length; i++)
-
 				{
-
 					this._controllerConstructorTypes[i] = this._controllerConstructorArgs[i].GetType ();
-
 				}
-
 			}
-
 		}
 
 		protected object[] _controllerConstructorArgs = new object[] {
-
-
-			
 		};
 
-
-
 		/// <summary>
-
 		/// The types of constructor args.
-
 		/// </summary>
-
 		public Type[] ControllerConstructorTypes
-
 		{
-
 			get { return this._controllerConstructorTypes; }
-
 		}
-
 		protected Type[] _controllerConstructorTypes = Type.EmptyTypes;
-
-
-
-		#endregion
-
-
-		//========================================================================
-
-
-
-		//========================================================================
-
-		#region -= constructors =-
-
-
+	
+		public Contact Person
+		{
+			get { return this._person; }
+			set { this._person = value; }
+		}
+		protected Contact _person;
 
 		public NavItem ()
-
 		{
-
 		}
 
-
-
-		public NavItem (string name) : this()
-
+		public NavItem (Contact person) : this()
 		{
-
-			this._name = name;
-
+			_person= person;
 		}
 
-
-
-		public NavItem (string name, UIViewController controller) : this(name)
-
+		public NavItem (Contact person, ContactView viewController) : this(person)		
 		{
-
-			this._controller = controller;
-
-		}
-
-		
-
-		public NavItem (string name, ContactView contact) : this(name)
-
-		{
-
-			this._contact = contact;
-
+			_person = person;	
+			_viewController = viewController;
 		}		
-		
-		public NavItem (string name, Type controllerType) : this(name)
 
+		public NavItem (Contact person, Type controllerType) : this(person)
 		{
-
 			this._controllerType = controllerType;
-
 		}
 
-
-
-		public NavItem (string name, Type controllerType, object[] controllerConstructorArgs) : this(name, controllerType)
-
+		public NavItem (Contact person, Type controllerType, object[] controllerConstructorArgs) : this(person, controllerType)
 		{
-
 			this.ControllerConstructorArgs = controllerConstructorArgs;
-
 		}
-
-
-
-		
-		#endregion
-
-		//===============================================================
-
 	}
-
 }
-
